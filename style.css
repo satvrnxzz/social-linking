@@ -6,26 +6,29 @@
 
 :root {
   --bg-color: #0d1b2a;
+  --url-bg: url(./assets/dark-bg.jpg);
   --color: #e0e1dd;
   --color-two: #778da9;
-  --surface-color: rgba(255, 255, 255, 0.05);
-  --surface-color-hover: rgba(255, 255, 255, 0.1);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.2);
   --switch-icon: url(./assets/moon.svg);
   --switch-icon-two: url(./assets/sun.svg);
 }
 
 .light {
   --bg-color: #e0e1dd;
+  --url-bg: url(./assets/light-bg.jpg);
   --color: #0d1b2a;
   --color-two: #a99275;
-  --surface-color: rgba(0, 0, 0, 0.05);
-  --surface-color-hover: rgba(0, 0, 0, 0.1);
+  --surface-color: rgba(0, 0, 0, 0.1);
+  --surface-color-hover: rgba(0, 0, 0, 0.2);
   --switch-icon: url(./assets/sun.svg);
   --switch-icon-two: url(./assets/moon.svg);
 }
 
 body {
-  background-color: var(--bg-color);
+  background: var(--bg-color);
+  height: 100vh;
 }
 
 body * {
@@ -44,7 +47,7 @@ body * {
 /* switch */
 #switch {
   display: flex;
-  justify-content: end;
+  justify-content: right;
 }
 
 #switch button {
@@ -54,6 +57,9 @@ body * {
   background: var(--surface-color) var(--switch-icon) no-repeat center;
   border: none;
   border-radius: 50%;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 
   transition: background 1s;
 }
@@ -72,7 +78,7 @@ body * {
 #profile img {
   width: 112px;
 
-  border: 2px solid var(--color);
+  border: 1px solid var(--color-two);
   border-radius: 50%;
   margin-bottom: 16px;
 }
@@ -109,10 +115,13 @@ ul li a {
   background-color: var(--surface-color);
   border-radius: 16px;
 
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
   text-decoration: none;
   font-weight: bold;
 
-  transition: background-color 0.1s;
+  transition: background-color 0.2s;
 }
 
 ul li a:hover {
@@ -133,9 +142,20 @@ ul li a:hover {
   padding: 12px;
   border-radius: 50%;
 
-  transition: background-color 0.1s;
+  transition-property: background-color, backdrop-filter;
+  transition-duration: 1s;
 }
 
 #social-links a:hover {
   background-color: var(--surface-color);
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* media queries */
+@media (min-width: 800px) {
+  body {
+    background: var(--url-bg) no-repeat top center/cover;
+  }
 }
