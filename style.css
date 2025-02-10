@@ -5,19 +5,23 @@
 }
 
 :root {
-  --bg-color: #0D1B2A;
-  --color: #E0E1DD;
+  --bg-color: #0d1b2a;
+  --color: #e0e1dd;
   --color-two: #778da9;
   --surface-color: rgba(255, 255, 255, 0.05);
   --surface-color-hover: rgba(255, 255, 255, 0.1);
+  --switch-icon: url(./assets/moon.svg);
+  --switch-icon-two: url(./assets/sun.svg);
 }
 
 .light {
-  --bg-color: #E0E1DD;
-  --color: #0D1B2A;
-  --color-two: #A99275;
+  --bg-color: #e0e1dd;
+  --color: #0d1b2a;
+  --color-two: #a99275;
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.1);
+  --switch-icon: url(./assets/sun.svg);
+  --switch-icon-two: url(./assets/moon.svg);
 }
 
 body {
@@ -34,7 +38,29 @@ body * {
   max-width: 600px;
 
   margin: 32px auto;
-  padding: 8px 32px;
+  padding: 0px 32px;
+}
+
+/* switch */
+#switch {
+  display: flex;
+  justify-content: end;
+}
+
+#switch button {
+  display: flex;
+  padding: 24px;
+
+  background: var(--surface-color) var(--switch-icon) no-repeat center;
+  border: none;
+  border-radius: 50%;
+
+  transition: background 1s;
+}
+
+#switch button:hover {
+  cursor: pointer;
+  background: var(--surface-color-hover) var(--switch-icon-two) no-repeat center;
 }
 
 /* profile */
