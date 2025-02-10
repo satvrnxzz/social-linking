@@ -66,3 +66,12 @@ ul li a {
   text-decoration: none;
   font-weight: bold;
 }
+
+/* social linking */
+#social-links {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+
+  font-size: 32px;
+}
