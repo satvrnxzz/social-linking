@@ -27,8 +27,14 @@
 }
 
 body {
-  background: var(--bg-color);
+  background-color: var(--bg-color);
   height: 100vh;
+
+  animation: bg-color-out 0.4s;
+}
+
+.light body {
+  animation: bg-color-in 0.4s forwards;
 }
 
 body * {
@@ -157,5 +163,24 @@ ul li a:hover {
 @media (min-width: 800px) {
   body {
     background: var(--url-bg) no-repeat top center/cover;
+  }
+}
+
+/* animation */
+@keyframes bg-color-in {
+  from {
+    background-color: #0d1b2a;
+  }
+  to {
+    background-color: #e0e1dd;
+  }
+}
+
+@keyframes bg-color-out {
+  from {
+    background-color: #e0e1dd;
+  }
+  to {
+    background-color: #0d1b2a;
   }
 }
